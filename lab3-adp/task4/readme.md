@@ -1,5 +1,6 @@
 ﻿Произведите корректную (правильную) по вашему мнению реализацию с применением принципа Dependency-Inversion Principle, DIP:
 Рассмотрим пример, где класс Notification зависит от конкретной реализации класса EmailService:
+```
 public class EmailService
 {
     public void SendEmail(string message)
@@ -22,6 +23,7 @@ public class Notification
         _emailService.SendEmail(message);
     }
 }
+```
 
 В этом примере класс Notification жестко связан с конкретной реализацией EmailService. Если в будущем нужно будет изменить способ отправки уведомлений (например, добавить SMS или push-уведомления), придется изменять класс Notification, что нарушает DIP.
 Чтобы соблюдать DIP, вам необходимо использовать абстракцию в виде интерфейса для отделения высокоуровневого модуля от низкоуровневого.
