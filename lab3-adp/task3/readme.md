@@ -1,5 +1,6 @@
 ﻿Произведите корректную (правильную) по вашему мнению реализацию с применением принципа Interface Segregation Principle, ISP:
 Рассмотрим пример интерфейса IWorker, который объединяет слишком много методов:
+```
 public interface IWorker
 {
     void Work();
@@ -44,5 +45,6 @@ public class RobotWorker : IWorker
         throw new NotImplementedException();
     }
 }
+```
 В этом примере класс RobotWorker вынужден реализовывать методы, которые ему не нужны (Eat и Sleep). Это нарушение принципа ISP.
 Чтобы соблюсти принцип ISP, вам необходимо разделить интерфейс IWorker на несколько специализированных интерфейсов.
